@@ -30,13 +30,13 @@ int main(void)
     {
         printf("What message would you like to encrypt?: ");
         // Prompt user for plaintext and store in dynamically allocated string by use of %ms, the m allocates space and [^\n] forces the scan to wait for a newline
-        scanf("%m[^\n]s", &plaintext);
+        scanf(" %m[^\n]s", &plaintext);
         while ((getchar()) != '\n');
     }
     else if (decision == 2)
     {
         printf("What message would you like to decrypt?: ");
-        scanf("%m[^\n]s", &plaintext);
+        scanf(" %m[^\n]s", &plaintext);
         while ((getchar()) != '\n');
     }
     
@@ -47,7 +47,7 @@ int main(void)
     //scanf in a string of digits that will serve as the key (scanning in a string because code was initially set up with a CLI argument) we will also call this string argv[1] to skip recoding
     char *argv[2]; 
     argv[1] = NULL;
-    scanf("%m[^\n]s", &argv[1]);
+    scanf(" %m[^\n]s", &argv[1]);
     while ((getchar()) != '\n');
 
     // Make sure every character in argv[1] is a digit
@@ -66,7 +66,7 @@ int main(void)
                 printf("Key(digits only): ");
                 argv[1] = NULL;
 
-                scanf("%m[^\n]s", &argv[1]);
+                scanf(" %m[^\n]s", &argv[1]);
                 while ((getchar()) != '\n');
 
                 i--;
@@ -77,7 +77,7 @@ int main(void)
                 free(argv[1]);
                 printf("Key(up to 9 digits): ");
                 argv[1] = NULL;
-                scanf("%m[^\n]s", &argv[1]);
+                scanf(" %m[^\n]s", &argv[1]);
                 while ((getchar()) != '\n');
 
                 i--;                
@@ -256,7 +256,7 @@ int main(void)
     //define many funny strings labelled with a number
     char *s[30];
 
-    s[0] = "Pushing random keys";
+    s[0] = "'None for Gretchen Weiner's";
     s[1] = "Churning RAM";
     s[2] = "Mining for coal";
     s[3] = "Burning fossil fuels";
@@ -283,7 +283,7 @@ int main(void)
     s[24] = "Hacking and slashing";
     s[25] = "Punching holes";
     s[26] = "Allocating spacetime";
-    s[27] = "Dozing off";
+    s[27] = "Smashing code";
     s[28] = "Reseating motherboard?";
     s[29] = "Installing cool lights";
 
@@ -315,11 +315,11 @@ int main(void)
 
     if (decision == 1)
     {
-        printf("\nPlaintext is: %s\n", finaltext);
+        printf("\nCyphertext is: %s\n", finaltext);
     }
     else
     {
-        printf("\nCyphertext is: %s\n", finaltext);
+        printf("\nPlaintext is: %s\n", finaltext);
     }
 
     double x;
